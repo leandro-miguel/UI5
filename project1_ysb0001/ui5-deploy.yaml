@@ -1,0 +1,22 @@
+specVersion: '1.0'
+metadata:
+  name: 'project1_ysb0001'
+type: application
+ui5Theme: sap_fiori_3
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: http://srvs4dev.sap.dev.com:8000
+          client: "100"
+        app:
+          name: Y_LEARNING
+          description: yteste
+          package: YLEANDRO
+          transport: S4DK907415

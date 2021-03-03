@@ -1,0 +1,22 @@
+specVersion: '1.0'
+metadata:
+  name: 'project1_estoque_cloud'
+type: application
+ui5Theme: sap_fiori_3
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://a0cc9ebf-e283-4a63-b412-fab03d712710.abap.us10.hana.ondemand.com
+          scp: true
+        app:
+          name: YSB001
+          description: ""
+          package: YABAP_001
+          transport: TRLK900624
